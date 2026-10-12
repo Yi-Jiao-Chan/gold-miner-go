@@ -1,0 +1,651 @@
+{
+  "11": {
+    "source": "Controls",
+    "text": "操作说明",
+    "height": 20.0,
+    "color": [
+      255,
+      255,
+      0,
+      255
+    ],
+    "align": 2
+  },
+  "13": {
+    "source": "Drop Claw",
+    "text": "放下抓钩",
+    "height": 16.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ]
+  },
+  "14": {
+    "source": "Press",
+    "text": "按下",
+    "height": 16.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ]
+  },
+  "15": {
+    "source": "Toss Dynamite",
+    "text": "投掷炸药",
+    "height": 16.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ]
+  },
+  "29": {
+    "source": "Start",
+    "text": "开始",
+    "height": 40.0,
+    "color": [
+      143,
+      112,
+      1,
+      255
+    ],
+    "align": 2
+  },
+  "33": {
+    "source": "Start",
+    "text": "开始",
+    "height": 40.0,
+    "color": [
+      143,
+      112,
+      1,
+      255
+    ],
+    "align": 2
+  },
+  "41": {
+    "source": "Instructions",
+    "text": "游戏说明",
+    "height": 20.0,
+    "color": [
+      255,
+      255,
+      255,
+      255
+    ],
+    "align": 2
+  },
+  "42": {
+    "source": "Instructions",
+    "text": "游戏说明",
+    "height": 20.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ],
+    "align": 2
+  },
+  "45": {
+    "source": "Instructions",
+    "text": "游戏说明",
+    "height": 22.0,
+    "color": [
+      255,
+      255,
+      255,
+      255
+    ],
+    "align": 2
+  },
+  "46": {
+    "source": "Use your claw and reel to mine gold and other treasures out of the earth. Your \nclaw will swing back and forth. Press the down arrow to lower it. Once it has \ngrabbed something it will reel it up. Heavy objects like rocks and large pieces of \ngold will be harder to reel up. Grab bags contain random amounts of money, a \nstrength power-up, or a stick of dynamite. Between levels you can buy items that \ncan help you\nCollect the target amount of money by the end of the level. If you don't meet your \ngoal by the end of the level it's game over. Your money carries over from one level \nto the next.\nIf you accidentally blow up everything on a level or you just feel like going on, you \ncan press the \"end level\" button. If you haven't met your level goal it will be game \nover.",
+    "text": "用抓钩挖掘地下的黄金和宝物。抓钩会左右摆动，按 ↓ 放下；抓到物品后会自动收回。石头和大块黄金较重，回收更慢。\n神秘袋可能装有金钱、力量加成或炸药。每关结束后，可以在商店购买道具。\n在时间结束前达到目标金额即可过关，否则游戏结束。金额会带入下一关，购物会扣除金额。\n点击“结束本关”可以提前结束；未达到目标时仍会失败。\n双人模式：左侧用 S / W，右侧用 ↓ / ↑；共享金额、炸药与道具，每关 40 秒。",
+    "height": 17.0,
+    "color": [
+      255,
+      255,
+      0,
+      255
+    ]
+  },
+  "47": {
+    "source": "Close",
+    "text": "关闭",
+    "height": 22.0,
+    "color": [
+      255,
+      204,
+      0,
+      255
+    ],
+    "align": 2
+  },
+  "48": {
+    "source": "Close",
+    "text": "关闭",
+    "height": 22.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ],
+    "align": 2
+  },
+  "56": {
+    "source": "Your First Goal is",
+    "text": "第一关目标金额",
+    "height": 20.0,
+    "color": [
+      255,
+      255,
+      0,
+      255
+    ],
+    "align": 2
+  },
+  "60": {
+    "source": "Your Next Goal is",
+    "text": "下一关目标金额",
+    "height": 20.0,
+    "color": [
+      255,
+      255,
+      0,
+      255
+    ],
+    "align": 2
+  },
+  "62": {
+    "source": "You made it to \nthe next Level!",
+    "text": "恭喜过关！\n继续挑战下一关",
+    "height": 20.0,
+    "color": [
+      255,
+      255,
+      0,
+      255
+    ],
+    "align": 2
+  },
+  "82": {
+    "source": "Next Level",
+    "text": "下一关",
+    "height": 16.0,
+    "color": [
+      0,
+      255,
+      0,
+      255
+    ],
+    "align": 2
+  },
+  "93": {
+    "source": "x",
+    "text": "×",
+    "height": 16.0,
+    "color": [
+      112,
+      83,
+      5,
+      255
+    ]
+  },
+  "105": {
+    "source": "Rocks",
+    "text": "石头",
+    "height": 20.0,
+    "color": [
+      51,
+      51,
+      51,
+      255
+    ],
+    "align": 2
+  },
+  "113": {
+    "source": "Clic",
+    "text": "点击",
+    "height": 16.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ]
+  },
+  "115": {
+    "source": "Click on t",
+    "text": "点击商品",
+    "height": 16.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ]
+  },
+  "116": {
+    "source": "Click on the ite",
+    "text": "点击想买的商品",
+    "height": 16.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ]
+  },
+  "117": {
+    "source": "Click on the items you wa",
+    "text": "点击想买的商品",
+    "height": 16.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ]
+  },
+  "118": {
+    "source": "Click on the items you want to bu",
+    "text": "点击想买的商品购买",
+    "height": 16.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ]
+  },
+  "119": {
+    "source": "Click on the items you want to buy. Cli",
+    "text": "点击想买的商品购买。",
+    "height": 16.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ]
+  },
+  "120": {
+    "source": "Click on the items you want to buy. Click on \n\"Nex",
+    "text": "点击商品购买，",
+    "height": 16.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ]
+  },
+  "121": {
+    "source": "Click on the items you want to buy. Click on \n\"Next Le",
+    "text": "点击商品购买，",
+    "height": 16.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ]
+  },
+  "122": {
+    "source": "Click on the items you want to buy. Click on \n\"Next Level\" ",
+    "text": "点击商品购买，准备好后",
+    "height": 16.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ]
+  },
+  "123": {
+    "source": "Click on the items you want to buy. Click on \n\"Next Level\" whe",
+    "text": "点击商品购买，准备好后",
+    "height": 16.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ]
+  },
+  "124": {
+    "source": "Click on the items you want to buy. Click on \n\"Next Level\" when you ar",
+    "text": "点击商品购买，准备好后",
+    "height": 16.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ]
+  },
+  "125": {
+    "source": "Click on the items you want to buy. Click on \n\"Next Level\" when you are rea",
+    "text": "点击商品购买，准备好后",
+    "height": 16.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ]
+  },
+  "126": {
+    "source": "Click on the items you want to buy. Click on \n\"Next Level\" when you are ready to go on.",
+    "text": "点击商品购买，准备好后\n点击“下一关”继续。",
+    "height": 16.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ]
+  },
+  "134": {
+    "source": "You Did Not \nReach Your Goal",
+    "text": "未达到目标金额\n游戏结束",
+    "height": 20.0,
+    "color": [
+      255,
+      255,
+      0,
+      255
+    ],
+    "align": 2
+  },
+  "142": {
+    "source": "Copyright © 2003. GameRival is a Service Mark of eUniverse, Inc. All Rights Reserved.",
+    "text": "版权 © 2003。GameRival 为 eUniverse, Inc. 的服务商标。保留所有权利。",
+    "height": 13.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ]
+  },
+  "145": {
+    "source": "Bonus rounds where you can gamble your gold to win even more",
+    "text": "奖励关卡可用黄金下注，赢取更多金钱",
+    "height": 11.0,
+    "color": [
+      125,
+      93,
+      0,
+      255
+    ]
+  },
+  "146": {
+    "source": "More items to buy including the Freeze Box, Lucky Clover and many more",
+    "text": "更多道具，包括冰冻箱、幸运草等",
+    "height": 11.0,
+    "color": [
+      125,
+      93,
+      0,
+      255
+    ]
+  },
+  "147": {
+    "source": "Bats & Elves will make your gold mining more difficult",
+    "text": "蝙蝠与精灵会增加挖矿难度",
+    "height": 11.0,
+    "color": [
+      125,
+      93,
+      0,
+      255
+    ]
+  },
+  "148": {
+    "source": "Tons of new levels!",
+    "text": "更多新关卡！",
+    "height": 11.0,
+    "color": [
+      125,
+      93,
+      0,
+      255
+    ]
+  },
+  "157": {
+    "source": "DOWNLOAD GOLD MINER NOW",
+    "text": "下载黄金矿工",
+    "height": 12.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ],
+    "align": 2
+  },
+  "158": {
+    "source": "Enjoying this game?  Download Gold Miner \nto get the full experience!",
+    "text": "喜欢这款游戏？\n下载黄金矿工体验更多内容！",
+    "height": 13.0,
+    "color": [
+      37,
+      28,
+      0,
+      255
+    ],
+    "align": 2
+  },
+  "162": {
+    "source": "Submit Your Score",
+    "text": "提交分数",
+    "height": 12.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ],
+    "align": 2
+  },
+  "164": {
+    "source": "Make sure your stats for this game \nare recorded and then challenge \nyour friends to a game.",
+    "text": "记录本次游戏成绩，\n向朋友发起挑战。",
+    "height": 11.0,
+    "color": [
+      79,
+      60,
+      0,
+      255
+    ],
+    "align": 2
+  },
+  "166": {
+    "source": "Play Again",
+    "text": "再玩一次",
+    "height": 12.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ],
+    "align": 2
+  },
+  "168": {
+    "source": "The hottest game on the Internet is now available for \ndownload. Explore new caves as you mine for gold, build \na small fortune and save your high scores. Gold Miner is \nchock full of fun and is a good time for everyone.",
+    "text": "黄金矿工：探索洞穴，挖掘黄金，\n积累财富，保存最高成绩。\n轻松有趣，适合所有玩家。",
+    "height": 11.0,
+    "color": [
+      125,
+      93,
+      0,
+      255
+    ]
+  },
+  "186": {
+    "source": "$",
+    "text": "$",
+    "height": 24.0,
+    "color": [
+      0,
+      0,
+      0,
+      255
+    ]
+  },
+  "187": {
+    "source": "$",
+    "text": "$",
+    "height": 24.0,
+    "color": [
+      0,
+      153,
+      0,
+      255
+    ]
+  },
+  "188": {
+    "source": "Money",
+    "text": "金额",
+    "height": 12.0,
+    "color": [
+      143,
+      112,
+      1,
+      255
+    ]
+  },
+  "189": {
+    "source": "Goal",
+    "text": "目标",
+    "height": 12.0,
+    "color": [
+      143,
+      112,
+      1,
+      255
+    ]
+  },
+  "192": {
+    "source": "Level:",
+    "text": "关卡",
+    "height": 12.0,
+    "color": [
+      143,
+      112,
+      1,
+      255
+    ]
+  },
+  "195": {
+    "source": "Time:",
+    "text": "时间",
+    "height": 12.0,
+    "color": [
+      143,
+      112,
+      1,
+      255
+    ]
+  },
+  "200": {
+    "source": "Exit",
+    "text": "结束",
+    "height": 12.0,
+    "color": [
+      143,
+      112,
+      1,
+      255
+    ],
+    "align": 2
+  },
+  "201": {
+    "source": "Level",
+    "text": "本关",
+    "height": 12.0,
+    "color": [
+      143,
+      112,
+      1,
+      255
+    ],
+    "align": 2
+  },
+  "212": {
+    "source": "?",
+    "text": "?",
+    "height": 30.0,
+    "color": [
+      255,
+      102,
+      0,
+      255
+    ]
+  },
+  "302": {
+    "source": "bonus",
+    "text": "奖励",
+    "height": 12.0,
+    "color": [
+      23,
+      37,
+      94,
+      255
+    ]
+  },
+  "306": {
+    "source": "STRENGTH ",
+    "text": "力量提升",
+    "height": 25.0,
+    "color": [
+      0,
+      153,
+      0,
+      255
+    ]
+  },
+  "328": {
+    "source": "T",
+    "text": "T",
+    "height": 12.0,
+    "color": [
+      255,
+      0,
+      0,
+      255
+    ]
+  },
+  "329": {
+    "source": "N",
+    "text": "N",
+    "height": 12.0,
+    "color": [
+      255,
+      0,
+      0,
+      255
+    ]
+  },
+  "6": {
+    "source": "Gold Miner",
+    "text": "黄金矿工",
+    "height": 28,
+    "color": [
+      255,
+      213,
+      0,
+      255
+    ],
+    "align": 2
+  }
+}

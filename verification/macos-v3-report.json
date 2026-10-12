@@ -1,0 +1,59 @@
+{
+  "version": "2.0.0",
+  "architecture": "darwin/arm64",
+  "app_executable": "黄金矿工.app/Contents/MacOS/GoldMiner",
+  "minimum_macos": "12.0",
+  "ebitengine": "2.10.5",
+  "binary_sha256": "c840c1f7a8b2c53d3b0783fc3bad8391dd47148b7cf07f38a4733528cf1d66e3",
+  "native_load_commands_valid": true,
+  "embedded_adhoc_signature_pages_verified": 6744,
+  "developer_id_signed": false,
+  "apple_notarized": false,
+  "mac_hardware_run_tested": false,
+  "dynamic_dependencies": [
+    "/usr/lib/libSystem.B.dylib",
+    "/usr/lib/libresolv.9.dylib"
+  ],
+  "executable_size_bytes": 27836562,
+  "validation": {
+    "go_test_all": "passed",
+    "go_vet_all": "passed",
+    "all_30_layouts_gameplay_ticks": 75000,
+    "shop_pointer_regression_ticks": 4500,
+    "shop_products": 5,
+    "cooperative_30_layout_ticks": 18000,
+    "cooperative_seconds": 40,
+    "pause_resume_seconds": 3,
+    "maximum_save_records": 100,
+    "native_linux_play": {
+      "physical_x11_inputs": true,
+      "first_level_score_before_shopping": 1050,
+      "purchase_saved": true,
+      "player2_W_dynamite_verified": true,
+      "pause_world_frozen": true,
+      "resume_delay_seconds": 3.083870340138674,
+      "real_window_close_saved": true,
+      "record_id": "eb0a99375bc4ae2314064c37",
+      "score_saved": 959,
+      "level_saved": 2
+    },
+    "native_linux_restart": {
+      "latest_binary_restart_test": "passed",
+      "actual_x11_inputs": true,
+      "record_id": "eb0a99375bc4ae2314064c37",
+      "restored_players": 2,
+      "restored_level": 2,
+      "restored_score": 959,
+      "restored_dynamite": 0,
+      "pause_frozen": true,
+      "linux_binary_sha256": "ad0d551d332c2338ad159ed8858cd6d800a317772283e554e2f5a85fc93adec5"
+    },
+    "input_updates_per_second": 120,
+    "original_movie_fps": 18,
+    "hd_snapshot_dimensions": [
+      2200,
+      1600
+    ],
+    "retina_text_and_viewport_tests": "passed"
+  }
+}

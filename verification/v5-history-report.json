@@ -1,0 +1,56 @@
+{
+  "version": "2.0.2",
+  "behavior": {
+    "active_saves": "unfinished campaigns only",
+    "maximum_active_saves": 100,
+    "completed_games": "automatically moved to history",
+    "history_fields": [
+      "id",
+      "created_at",
+      "updated_at",
+      "players",
+      "level",
+      "score",
+      "goal",
+      "version"
+    ],
+    "history_contains_checkpoint": false,
+    "history_uses_active_capacity": false,
+    "legacy_completed_saves": "automatically migrate on open/list",
+    "history_resume_action": false,
+    "history_delete": "independent confirmation and cancel",
+    "archive_order": "durable summary before active checkpoint removal",
+    "crash_recovery": "valid final history removes stale active checkpoint; invalid history preserves recovery checkpoint"
+  },
+  "validation": {
+    "go_test_all": "passed",
+    "final_cmd_and_storage_tests": "passed",
+    "go_vet_all": "passed",
+    "race_cmd_and_storage": "passed",
+    "capacity_case": "100 active saves plus 121 histories",
+    "archive_failure_and_retry": "passed; active file preserved until history is durable",
+    "legacy_migration_and_corruption": "passed",
+    "no_recreation_after_history_delete": "passed",
+    "mac_real_hardware_tested": false
+  },
+  "native_linux_desktop": {
+    "actual_x11_mouse_events": true,
+    "legacy_completed_save_migrated": true,
+    "completed_checkpoints_removed": true,
+    "history_has_no_checkpoint": true,
+    "history_does_not_offer_continue": true,
+    "unfinished_save_remained": true,
+    "gameover_auto_archived": true,
+    "home_did_not_change_end_time": true,
+    "history_delete_cancel_and_confirm": true,
+    "quit_did_not_recreate_deleted_history": true,
+    "linux_binary_sha256": "085b2aaa83b9539fa933e47c4f50f2e0302904d272c95fff70c17b918ba98578"
+  },
+  "screenshots": [
+    "v5-home.png",
+    "v5-active-saves.png",
+    "v5-history-new-game.png",
+    "v5-gameover-history.png",
+    "v5-delete-history.png"
+  ]
+}

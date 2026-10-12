@@ -1,0 +1,94 @@
+{
+  "version": "2.0.1",
+  "fixes": {
+    "chinese_font_layout": {
+      "original_ink_bounds_preserved": true,
+      "glyph_bounds_and_advance_fitting": true,
+      "static_size_factor": 0.8,
+      "hud_and_body": "left aligned",
+      "buttons_and_headings": "centered",
+      "numbers": "original fonts unchanged",
+      "all_static_translations_and_five_descriptions_checked_at_scales": [
+        1,
+        4
+      ],
+      "actual_raster_clipping_checks": "passed"
+    },
+    "level_save_reload_countdown": {
+      "duration_seconds": 3,
+      "updates_at_120tps": 360,
+      "world_and_input_frozen_during_countdown": true,
+      "solo_and_coop_restart_tests": "passed",
+      "shop_load": "immediate, preserves prices and purchases"
+    },
+    "cooperative_spacing": {
+      "left_anchor": 235,
+      "right_anchor": 305,
+      "spacing_stage_pixels": 70,
+      "legacy_save_migration": "moves root miner/claw/bonus instances without resetting animation or RNG",
+      "all_30_layouts": "passed"
+    },
+    "keyboard_layout": {
+      "solo": {
+        "drop": "Down",
+        "dynamite": "Up"
+      },
+      "cooperative_left": {
+        "drop": "S",
+        "dynamite": "W"
+      },
+      "cooperative_right": {
+        "drop": "Down",
+        "dynamite": "Up"
+      },
+      "mapping_and_independent_claw_tests": "passed"
+    }
+  },
+  "validation": {
+    "go_test_all": "passed",
+    "go_vet_all": "passed",
+    "go_race_affected_packages": [
+      "cmd/goldminer",
+      "internal/flash",
+      "internal/render",
+      "internal/i18n"
+    ],
+    "all_30_solo_layout_ticks": 75000,
+    "all_30_cooperative_layout_ticks": 18000,
+    "mac_hardware_tested": false
+  },
+  "native_linux_play": {
+    "physical_x11_inputs": true,
+    "left_S_and_right_Down_verified": true,
+    "first_level_score_before_shopping": 711,
+    "purchase_saved": true,
+    "left_W_dynamite_verified": true,
+    "pause_world_frozen": true,
+    "resume_delay_seconds": 3.08276772685349,
+    "real_window_close_saved": true,
+    "record_id": "aa61f4456e402819472b3284",
+    "score_saved": 589,
+    "level_saved": 2
+  },
+  "native_linux_old_save_load": {
+    "old_save_loaded": true,
+    "restored_level": 2,
+    "restored_score": 959,
+    "restored_stick": 0,
+    "new_anchors": [
+      235,
+      305
+    ],
+    "actual_x11_inputs": true,
+    "load_countdown_world_frozen": true,
+    "remaining_countdown_measured_seconds": 2.9207183364778757,
+    "linux_binary_sha256": "af6a9531d827ebc1f84840f94bb5ee6965d9a611f2ce2c049e87df33542b8c56"
+  },
+  "screenshots": [
+    "v4-coop.png",
+    "v4-shop.png",
+    "v4-level-passed.png",
+    "v4-loaded-countdown.png",
+    "v4-restored-paused.png"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "version": "2.0.3",
+  "repository": "https://github.com/Yi-Jiao-Chan/gold-miner-go",
+  "source_inputs_sha256": "076602286271a4a88ca89ecc736aeb1ce8ae882f27bd3bec231a9077b4274e8f",
+  "go_version": "1.25.6",
+  "ebitengine": "2.10.5",
+  "validation": {
+    "go_test_all": "passed",
+    "go_vet_all": "passed",
+    "windows_savegame_test_binary": "compiled; not run",
+    "linux_native_desktop": {
+      "actual_x11_mouse_events": true,
+      "legacy_completed_save_migrated": true,
+      "completed_checkpoints_removed": true,
+      "history_has_no_checkpoint": true,
+      "history_does_not_offer_continue": true,
+      "unfinished_save_remained": true,
+      "gameover_auto_archived": true,
+      "home_did_not_change_end_time": true,
+      "history_delete_cancel_and_confirm": true,
+      "quit_did_not_recreate_deleted_history": true,
+      "linux_binary_sha256": "8b26df60e958fa18d1f5739ff9232d15719c14dbfc5081f62ac1f9e1542b32c8"
+    }
+  },
+  "platforms": {
+    "macos-arm64": {
+      "binary_sha256": "3fac7209cb8b0671df5df501c4ad989e77a2943322f95dfc13947b3de01978f1",
+      "bytes": 27886434,
+      "minimum_macos": "12.0",
+      "embedded_adhoc_signature_pages_verified": 6756,
+      "developer_id_signed": false,
+      "notarized": false,
+      "native_hardware_run_tested": false
+    },
+    "windows-amd64": {
+      "binary_sha256": "97456fb0db897f28e2e27ab93b3a02305d2b0449466c43041775312c5f23d185",
+      "bytes": 28482048,
+      "pe_machine": "AMD64",
+      "subsystem": "Windows GUI",
+      "native_hardware_run_tested": false,
+      "directory_sync": "skip unsupported read-only directory flush; record file flushed before replacement"
+    },
+    "linux-amd64": {
+      "binary_sha256": "8b26df60e958fa18d1f5739ff9232d15719c14dbfc5081f62ac1f9e1542b32c8",
+      "bytes": 27919088,
+      "elf_machine": "AMD64",
+      "minimum_glibc": "2.34",
+      "native_desktop_run_tested": true
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "version": "1.1.0",
+  "architecture": "darwin/arm64",
+  "app_executable": "黄金矿工.app/Contents/MacOS/GoldMiner",
+  "minimum_macos": "12.0",
+  "ebitengine": "2.10.5",
+  "binary_sha256": "58ee1851b68184cda43931699838250fed7111616383647dc2e46b2506551341",
+  "native_load_commands_valid": true,
+  "embedded_adhoc_signature_pages_verified": 4918,
+  "developer_id_signed": false,
+  "apple_notarized": false,
+  "mac_hardware_run_tested": false,
+  "dynamic_dependencies": [
+    "/usr/lib/libSystem.B.dylib",
+    "/usr/lib/libresolv.9.dylib"
+  ],
+  "executable_size_bytes": 20300690,
+  "validation": {
+    "go_test_all": "passed",
+    "go_vet_all": "passed",
+    "all_30_layouts_gameplay_ticks": 75000,
+    "shop_pointer_regression_ticks": 4500,
+    "shop_products": 5,
+    "input_updates_per_second": 120,
+    "original_movie_fps": 18,
+    "hd_snapshot_dimensions": [
+      2200,
+      1600
+    ],
+    "retina_text_and_viewport_tests": "passed"
+  }
+}

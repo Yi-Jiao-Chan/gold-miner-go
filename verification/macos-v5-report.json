@@ -1,0 +1,58 @@
+{
+  "version": "2.0.2",
+  "architecture": "darwin/arm64",
+  "app_executable": "黄金矿工.app/Contents/MacOS/GoldMiner",
+  "minimum_macos": "12.0",
+  "ebitengine": "2.10.5",
+  "binary_sha256": "e3cf336f2cbab1882893f2554de30dc498fb6e1e09bbc046e89f2ba569622a9d",
+  "native_load_commands_valid": true,
+  "embedded_adhoc_signature_pages_verified": 6756,
+  "developer_id_signed": false,
+  "apple_notarized": false,
+  "mac_hardware_run_tested": false,
+  "dynamic_dependencies": [
+    "/usr/lib/libSystem.B.dylib",
+    "/usr/lib/libresolv.9.dylib"
+  ],
+  "executable_size_bytes": 27886434,
+  "validation": {
+    "go_test_all": "passed",
+    "go_vet_all": "passed",
+    "all_30_layouts_gameplay_ticks": 75000,
+    "shop_pointer_regression_ticks": 4500,
+    "shop_products": 5,
+    "cooperative_30_layout_ticks": 18000,
+    "cooperative_seconds": 40,
+    "pause_resume_seconds": 3,
+    "maximum_save_records": 100,
+    "native_linux_history": {
+      "actual_x11_mouse_events": true,
+      "legacy_completed_save_migrated": true,
+      "completed_checkpoints_removed": true,
+      "history_has_no_checkpoint": true,
+      "history_does_not_offer_continue": true,
+      "unfinished_save_remained": true,
+      "gameover_auto_archived": true,
+      "home_did_not_change_end_time": true,
+      "history_delete_cancel_and_confirm": true,
+      "quit_did_not_recreate_deleted_history": true,
+      "linux_binary_sha256": "085b2aaa83b9539fa933e47c4f50f2e0302904d272c95fff70c17b918ba98578"
+    },
+    "history_has_no_checkpoint": true,
+    "completed_save_migration": "passed",
+    "history_outside_active_100_limit": "passed",
+    "archive_crash_recovery": "passed",
+    "go_race_affected_packages": "passed",
+    "chinese_glyph_bounds_and_raster_tests": "passed at 1x and 4x",
+    "legacy_coop_checkpoint_migration": "passed",
+    "cooperative_anchor_spacing": 70,
+    "keyboard_layout": "left S/W, right Down/Up",
+    "input_updates_per_second": 120,
+    "original_movie_fps": 18,
+    "hd_snapshot_dimensions": [
+      2200,
+      1600
+    ],
+    "retina_text_and_viewport_tests": "passed"
+  }
+}

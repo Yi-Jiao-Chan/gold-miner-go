@@ -1,0 +1,84 @@
+{
+  "version": "2.0.0",
+  "reported_issues": {
+    "blurry_graphics": {
+      "implementation": "Draw directly at actual screen resolution; exported assets use 4x or 8x resolution; text raster follows viewport scale.",
+      "checks": [
+        "TestViewportKeepsPointerOnStageAfterResize",
+        "TestTextRasterMatchesRetinaResolution"
+      ]
+    },
+    "delayed_claw_input": {
+      "implementation": "Poll and apply keyboard events at 120 updates per second while advancing original movie at 18 frames per second.",
+      "checks": [
+        "TestArchivedPointerAndKeyInput",
+        "frameClock pacing tests",
+        "native X11 keyboard gameplay"
+      ]
+    },
+    "shop_flicker_and_changing_prices": {
+      "cause": "ActionGotoFrame failed to stop the product timeline, re-running product initialization.",
+      "implementation": "ActionGotoFrame stops; a separate ActionPlay resumes. Sold items remain sold and prices persist.",
+      "checks": [
+        "TestGotoFrameStopsUnlessFollowedByPlay",
+        "TestArchivedShopPointerPricesAndPurchasesPersist",
+        "TestAutomaticShopSavePurchasesRestartAndNextLevel"
+      ],
+      "all_five_products_checked": true,
+      "regression_ticks": 4500
+    }
+  },
+  "requirements": {
+    "chinese_interface": "All original static text and relevant dynamic text translated; embedded Noto Sans SC font.",
+    "pause": "Entire runtime freezes; button or Escape resume requires 360 updates at 120 TPS.",
+    "automatic_save": "Full display tree, variables and RNG persist at level transitions, shopping, home and window close.",
+    "continue_unfinished_games": "Native save selection restores exact checkpoint.",
+    "maximum_save_records": 100,
+    "cooperative_players": 2,
+    "cooperative_level_seconds": 40,
+    "cooperative_timer_ticks_at_18fps": 720,
+    "player2_drop_key": "S",
+    "player2_dynamite_key": "W",
+    "shared_score_items": true
+  },
+  "validation": {
+    "go_test_all": "passed",
+    "go_vet_all": "passed",
+    "go_race_all": "passed; affected packages rechecked after final gameplay changes",
+    "solo_all_30_layout_ticks": 75000,
+    "cooperative_all_30_layout_ticks": 18000,
+    "mac_real_hardware_tested": false
+  },
+  "native_linux_desktop_play": {
+    "physical_x11_inputs": true,
+    "first_level_score_before_shopping": 1050,
+    "purchase_saved": true,
+    "player2_W_dynamite_verified": true,
+    "pause_world_frozen": true,
+    "resume_delay_seconds": 3.083870340138674,
+    "real_window_close_saved": true,
+    "record_id": "eb0a99375bc4ae2314064c37",
+    "score_saved": 959,
+    "level_saved": 2
+  },
+  "latest_binary_restart": {
+    "latest_binary_restart_test": "passed",
+    "actual_x11_inputs": true,
+    "record_id": "eb0a99375bc4ae2314064c37",
+    "restored_players": 2,
+    "restored_level": 2,
+    "restored_score": 959,
+    "restored_dynamite": 0,
+    "pause_frozen": true,
+    "linux_binary_sha256": "ad0d551d332c2338ad159ed8858cd6d800a317772283e554e2f5a85fc93adec5"
+  },
+  "screenshots": [
+    "v3-home.png",
+    "v3-coop.png",
+    "v3-shop.png",
+    "v3-paused.png",
+    "v3-resume-countdown.png",
+    "v3-save-list.png",
+    "v3-restarted-midlevel.png"
+  ]
+}
