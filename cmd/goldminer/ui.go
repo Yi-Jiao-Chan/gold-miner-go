@@ -76,6 +76,7 @@ func (g *game) buttons() []uiButton {
 
 var ink = color.NRGBA{R: 70, G: 43, B: 17, A: 255}
 var cream = color.NRGBA{R: 255, G: 249, B: 225, A: 255}
+var scoreGreen = color.NRGBA{G: 153, A: 255}
 
 func fill(screen *ebiten.Image, r rect, c color.NRGBA) {
 	v := render.Viewport(screen.Bounds().Dx(), screen.Bounds().Dy())
@@ -87,8 +88,16 @@ func (g *game) label(screen *ebiten.Image, s string, x, y, w, h, size float64, c
 }
 func (g *game) drawPlayerScores(screen *ebiten.Image, y float64, c color.NRGBA) {
 	scores := g.rt.PlayerScores()
-	g.label(screen, "左侧：$"+flash.String(scores[0]), 20, y, 200, 24, 12, c, 0)
-	g.label(screen, "右侧：$"+flash.String(scores[1]), 225, y, 200, 24, 12, c, 0)
+	for i, name := range []string{"miner", "miner2"} {
+		x, w := float64(20+205*i), 200.0
+		text := "$" + flash.String(scores[i])
+		if miner, ok := g.rt.Get(g.rt.Root, name).(*flash.Node); ok && miner != nil {
+			w = 64
+			x = g.rt.World(miner).TX - w/2
+			g.label(screen, text, x+1, y+1, w, 24, 12, ink, 2)
+		}
+		g.label(screen, text, x, y, w, 24, 12, c, 2)
+	}
 }
 func (g *game) drawUI(screen *ebiten.Image) {
 	if g.ui != "" {
@@ -147,7 +156,7 @@ func (g *game) drawUI(screen *ebiten.Image) {
 		}
 		g.label(screen, message, 40, 163, 470, 30, 14, ink, 2)
 		if g.rt.Players() == 2 {
-			g.drawPlayerScores(screen, 193, ink)
+			g.drawPlayerScores(screen, 193, scoreGreen)
 		}
 	}
 	if g.ui == "" && g.paused {
@@ -180,12 +189,11 @@ func (g *game) drawUI(screen *ebiten.Image) {
 	if g.ui == "" && g.rt.Root.Frame == 130 {
 		g.label(screen, fmt.Sprintf("金额：$%.0f", numeric(g.rt.Get(g.rt.Root, "score"))), 20, 370, 250, 26, 14, cream, 0)
 		if g.rt.Players() == 2 {
-			g.drawPlayerScores(screen, 341, cream)
+			g.drawPlayerScores(screen, 341, scoreGreen)
 		}
 	}
 	if g.ui == "" && g.inLevel() && g.rt.Players() == 2 {
-		fill(screen, rect{8, 70, 420, 24}, cream)
-		g.drawPlayerScores(screen, 70, ink)
+		g.drawPlayerScores(screen, 70, scoreGreen)
 		g.label(screen, "左：S / W  ·  右：↓ / ↑", 397, 384, 148, 14, 8, cream, 2)
 	}
 }
