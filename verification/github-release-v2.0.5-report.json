@@ -1,0 +1,143 @@
+{
+  "version": "2.0.5",
+  "built_at": "2026-10-18T07:01:20.122907+00:00",
+  "repository": "https://github.com/Yi-Jiao-Chan/gold-miner-go",
+  "source_commit": "398dacd617ebbba4974442d2ae0ca8a36ee8ca37",
+  "source_inputs_sha256": "9e918f7cb386fdfdf8dffb3c677056c6616296345871f6306dce2c524e838c70",
+  "source_inputs_hash_algorithm": "SHA-256 of the UTF-8 manifest containing SHA256(file), two spaces, repository-relative path, newline for each sorted tracked Go source, go.mod, go.sum and assets file",
+  "source_inputs_files": 258,
+  "go_version": "1.25.6",
+  "ebitengine": "2.10.5",
+  "changes": {
+    "cooperative_score_background": "none",
+    "cooperative_score_position": "centered below each miner using its world-space x coordinate",
+    "cooperative_score_label": "amount only, no left/right wording",
+    "cooperative_score_color": [
+      0,
+      153,
+      0,
+      255
+    ]
+  },
+  "validation": {
+    "go_test_ui": {
+      "command": "xvfb-run -a go test ./cmd/goldminer",
+      "result": "passed"
+    },
+    "go_vet_ui": {
+      "command": "go vet ./cmd/goldminer",
+      "result": "passed"
+    },
+    "core_sources_unchanged_from": "v2.0.4",
+    "core_validation_reference": "verification/github-release-v2.0.4-report.json",
+    "release_binary_smoke": "passed in solo and cooperative modes; light and dark layouts visually checked",
+    "screenshots": [
+      "release-2.0.5-coop-scores.png",
+      "release-2.0.5-coop-dark.png",
+      "release-2.0.5-solo.png"
+    ],
+    "snapshot_dimensions": [
+      1100,
+      800
+    ],
+    "zip_integrity": "CRC, filenames, executable permissions and updated notes verified",
+    "all_binaries_source_revision_matches": true,
+    "all_binaries_vcs_modified": false
+  },
+  "platforms": {
+    "macos-arm64": {
+      "binary_sha256": "df2be43c601c27db584e483728ae6da030b90462b5a7a207d23fe8935367569a",
+      "bytes": 27886466,
+      "file": "Mach-O 64-bit arm64 executable, flags:<|DYLDLINK|PIE>",
+      "build": {
+        "-buildmode": "exe",
+        "-compiler": "gc",
+        "-trimpath": "true",
+        "CGO_ENABLED": "0",
+        "GOARCH": "arm64",
+        "GOOS": "darwin",
+        "GOARM64": "v8.0",
+        "vcs": "git",
+        "vcs.revision": "398dacd617ebbba4974442d2ae0ca8a36ee8ca37",
+        "vcs.time": "2026-10-18T07:00:03Z",
+        "vcs.modified": "false"
+      },
+      "native_hardware_run_tested": false,
+      "bundle_version": "2.0.5",
+      "bundle_build": "8",
+      "minimum_macos": "12.0",
+      "embedded_adhoc_signature_pages_verified": 6756,
+      "developer_id_signed": false,
+      "notarized": false,
+      "archive": {
+        "name": "gold-miner-macos-arm64-v2.0.5.zip",
+        "bytes": 15544259,
+        "sha256": "30c267341fed3af342b03e03e8dd425efefb02a1282ba78a5359c7f299459249"
+      }
+    },
+    "windows-amd64": {
+      "binary_sha256": "d7ff71e39b8c5d4bc98acd3177b299914820f7a57cb7fba8b87ffbff4e17cb8c",
+      "bytes": 28486656,
+      "file": "PE32+ executable (GUI) x86-64, for MS Windows, 8 sections",
+      "build": {
+        "-buildmode": "exe",
+        "-compiler": "gc",
+        "-trimpath": "true",
+        "CGO_ENABLED": "0",
+        "GOARCH": "amd64",
+        "GOOS": "windows",
+        "GOAMD64": "v1",
+        "vcs": "git",
+        "vcs.revision": "398dacd617ebbba4974442d2ae0ca8a36ee8ca37",
+        "vcs.time": "2026-10-18T07:00:03Z",
+        "vcs.modified": "false"
+      },
+      "native_hardware_run_tested": false,
+      "pe_machine": "AMD64",
+      "subsystem": "Windows GUI",
+      "archive": {
+        "name": "gold-miner-windows-amd64-v2.0.5.zip",
+        "bytes": 15715480,
+        "sha256": "e744149b29c7ba2219d7106ac9580fe5a34d94026cee886a672cda0471fbb85f"
+      }
+    },
+    "linux-amd64": {
+      "binary_sha256": "be164a632128b79e8502826dd925f282116534b6ca83b9dd812248ec6f6ff256",
+      "bytes": 27923352,
+      "file": "ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=95de114f097dbc5b433ec6483a3fed9ffd67e569, for GNU/Linux 3.2.0, stripped",
+      "build": {
+        "-buildmode": "exe",
+        "-compiler": "gc",
+        "-trimpath": "true",
+        "CGO_ENABLED": "1",
+        "GOARCH": "amd64",
+        "GOOS": "linux",
+        "GOAMD64": "v1",
+        "vcs": "git",
+        "vcs.revision": "398dacd617ebbba4974442d2ae0ca8a36ee8ca37",
+        "vcs.time": "2026-10-18T07:00:03Z",
+        "vcs.modified": "false"
+      },
+      "native_hardware_run_tested": false,
+      "elf_machine": "AMD64",
+      "minimum_glibc": "2.34",
+      "runtime_smoke": {
+        "passed": true,
+        "display": "Xvfb",
+        "modes": [
+          "solo",
+          "cooperative"
+        ],
+        "cooperative_layouts": [
+          "L1_1",
+          "L1_2"
+        ]
+      },
+      "archive": {
+        "name": "gold-miner-linux-amd64-v2.0.5.zip",
+        "bytes": 15578265,
+        "sha256": "d02687fc1420b1b27055fe9ab797cb3374c3883aba1e7f8cbc1a4a08af291e39"
+      }
+    }
+  }
+}
