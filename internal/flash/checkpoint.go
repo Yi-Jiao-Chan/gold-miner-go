@@ -17,6 +17,10 @@ func (r *Runtime) Checkpoint() ([]byte, error) {
 		return nil, fmt.Errorf("movie is executing actions")
 	}
 	cp := checkpoint{Version: 1, Movie: r.Movie.SHA256, Players: r.Players(), Busy: r.coopBusy}
+	if r.Players() == 2 {
+		scores := r.PlayerScores()
+		cp.PlayerScores = &scores
+	}
 	var err error
 	cp.Random, err = r.pcg.MarshalBinary()
 	if err != nil {
@@ -165,17 +169,31 @@ func Restore(movie *Movie, data []byte) (*Runtime, error) {
 			seen[p] = true
 		}
 	}
+	if r.Players() == 2 {
+		if cp.PlayerScores == nil {
+			// Legacy saves only have a shared score. Split it once, then retain
+			// the individual balances in all subsequent checkpoints.
+			half := number(r.Root.Get("score")) / 2
+			r.coopScores = [2]float64{half, half}
+		} else {
+			r.coopScores = *cp.PlayerScores
+			if r.coopScores[0]+r.coopScores[1] != number(r.Root.Get("score")) {
+				return nil, fmt.Errorf("inconsistent saved player scores")
+			}
+		}
+	}
 	r.restoreCoopSpacing()
 	return r, nil
 }
 
 type checkpoint struct {
-	Version int         `json:"version"`
-	Movie   string      `json:"movie"`
-	Players int         `json:"players"`
-	Busy    [2]bool     `json:"busy"`
-	Random  []byte      `json:"random"`
-	Nodes   []savedNode `json:"nodes"`
+	Version      int         `json:"version"`
+	Movie        string      `json:"movie"`
+	Players      int         `json:"players"`
+	PlayerScores *[2]float64 `json:"player_scores,omitempty"`
+	Busy         [2]bool     `json:"busy"`
+	Random       []byte      `json:"random"`
+	Nodes        []savedNode `json:"nodes"`
 }
 type savedValue struct {
 	Kind   string `json:"kind"`

@@ -44,6 +44,7 @@ type Runtime struct {
 	players        int
 	playerContext  int
 	coopBusy       [2]bool
+	coopScores     [2]float64
 	jobs           []actionJob
 	sounds         []int
 	draining       bool
@@ -582,6 +583,16 @@ func (r *Runtime) setMember(n *Node, name string, value any) {
 		}
 	}
 	v := number(value)
+	if r.Players() == 2 && n == r.Root && key == "score" {
+		delta := v - number(n.Get("score"))
+		if r.playerContext > 0 {
+			r.coopScores[r.playerContext-1] += delta
+		} else {
+			// Shop actions have no miner context; both players share the cost.
+			r.coopScores[0] += delta / 2
+			r.coopScores[1] += delta / 2
+		}
+	}
 	switch key {
 	case "_x":
 		n.Matrix.TX = v

@@ -16,6 +16,15 @@ func (r *Runtime) Players() int {
 	return 1
 }
 
+// PlayerScores returns cumulative earnings less each player's share of shop
+// spending. Their sum is the shared score used for level goals and purchases.
+func (r *Runtime) PlayerScores() [2]float64 {
+	if r.Players() == 2 {
+		return r.coopScores
+	}
+	return [2]float64{number(r.Root.Get("score")), 0}
+}
+
 // SetPlayers selects solo or cooperative play. Cooperative miners use separate
 // instances of the original timelines, with one shared field and inventory.
 func (r *Runtime) SetPlayers(players int) error {
@@ -30,6 +39,10 @@ func (r *Runtime) SetPlayers(players int) error {
 		busy = r.coopBusy[0]
 	}
 	r.players = players
+	if players == 2 {
+		half := number(r.Root.Get("score")) / 2
+		r.coopScores = [2]float64{half, half}
+	}
 	r.coopBusy = [2]bool{busy, false}
 	r.Root.Vars["busy"] = float64(0)
 	if busy {

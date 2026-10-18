@@ -38,6 +38,7 @@ func (g *game) writeStatus() {
 		remaining = g.rt.Get(timer, "time")
 	}
 	status := map[string]any{"ui": g.ui, "paused": g.paused, "resume_updates": g.resumeLeft, "players": g.rt.Players(), "root_frame": g.rt.Root.Frame, "level": g.rt.Get(g.rt.Root, "levelDis"), "stick": g.rt.Get(g.rt.Root, "stick"), "score": g.rt.Get(g.rt.Root, "score"), "goal": g.rt.Get(g.rt.Root, "goal"), "time": remaining, "record_id": g.record.ID, "completed": g.record.Completed, "notice": g.notice, "clips": clips, "targets": targets}
+	status["player_scores"] = g.rt.PlayerScores()
 	b, err := json.Marshal(status)
 	if err != nil {
 		return

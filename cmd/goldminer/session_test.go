@@ -122,11 +122,21 @@ func TestAutomaticShopSavePurchasesRestartAndNextLevel(t *testing.T) {
 	click(t, g, "coop")
 	updates(t, g, 300)
 	timer := findClip(g.rt.Root, 197)
-	g.rt.Set(g.rt.Root, "score", float64(10000))
+	for i, name := range []string{"bonus", "bonus2"} {
+		bonus := g.rt.Get(g.rt.Root, name).(*flash.Node)
+		g.rt.Set(bonus, "bscore", float64(600-i*200))
+		if err := g.rt.Goto(bonus, 2, true); err != nil {
+			t.Fatal(err)
+		}
+	}
+	updates(t, g, 240)
+	if g.rt.PlayerScores() != [2]float64{600, 400} {
+		t.Fatalf("individual earnings=%v", g.rt.PlayerScores())
+	}
 	g.rt.Set(timer, "time", float64(1))
 	updates(t, g, 1500)
 	if g.rt.Root.Frame != 130 || g.record.ID == "" {
-		t.Fatalf("no shop checkpoint frame=%d", g.rt.Root.Frame)
+		t.Fatalf("combined earnings did not pass the level: frame=%d", g.rt.Root.Frame)
 	}
 	saved, e := g.store.List()
 	if e != nil || len(saved) != 1 || saved[0].Completed {
@@ -140,6 +150,11 @@ func TestAutomaticShopSavePurchasesRestartAndNextLevel(t *testing.T) {
 	}
 	if numeric(g.rt.Get(g.rt.Root, "score")) >= score {
 		t.Fatal("shop click did not buy")
+	}
+	halfCost := (score - numeric(g.rt.Get(g.rt.Root, "score"))) / 2
+	wantScores := [2]float64{600 - halfCost, 400 - halfCost}
+	if g.rt.PlayerScores() != wantScores {
+		t.Fatalf("purchase balances=%v want=%v", g.rt.PlayerScores(), wantScores)
 	}
 	saved, _ = g.store.List()
 	expected, _ := g.rt.Checkpoint()
@@ -174,6 +189,9 @@ func TestAutomaticShopSavePurchasesRestartAndNextLevel(t *testing.T) {
 	}
 	if numeric(findClip(restart.rt.Root, 197).Get("time")) > 40 {
 		t.Fatal("next level did not use forty seconds")
+	}
+	if restart.rt.PlayerScores() != wantScores {
+		t.Fatalf("next level reset individual scores=%v want=%v", restart.rt.PlayerScores(), wantScores)
 	}
 }
 func TestFailedCampaignMovesToHistoryWithoutLeavingSave(t *testing.T) {

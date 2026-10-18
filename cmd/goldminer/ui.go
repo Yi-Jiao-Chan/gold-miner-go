@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/hajimehoshi/ebiten/v2"
 	"github.com/hajimehoshi/ebiten/v2/vector"
+	"goldminer/internal/flash"
 	"goldminer/internal/render"
 	"image/color"
 	"math"
@@ -84,6 +85,11 @@ func fill(screen *ebiten.Image, r rect, c color.NRGBA) {
 func (g *game) label(screen *ebiten.Image, s string, x, y, w, h, size float64, c color.NRGBA, align int) {
 	g.renderer.Label(screen, s, x, y, w, h, size, c, align)
 }
+func (g *game) drawPlayerScores(screen *ebiten.Image, y float64, c color.NRGBA) {
+	scores := g.rt.PlayerScores()
+	g.label(screen, "左侧：$"+flash.String(scores[0]), 20, y, 200, 24, 12, c, 0)
+	g.label(screen, "右侧：$"+flash.String(scores[1]), 225, y, 200, 24, 12, c, 0)
+}
 func (g *game) drawUI(screen *ebiten.Image) {
 	if g.ui != "" {
 		fill(screen, rect{0, 0, 550, 400}, color.NRGBA{R: 46, G: 35, B: 20, A: 245})
@@ -93,11 +99,11 @@ func (g *game) drawUI(screen *ebiten.Image) {
 	case "home":
 		g.label(screen, "黄金矿工", 60, 24, 430, 50, 28, ink, 2)
 		g.label(screen, "中文桌面版 · 自动存档 · 双人合作", 65, 77, 420, 25, 14, ink, 2)
-		g.label(screen, "单人 60 秒 / 双人 40 秒；分数和商店道具共享", 45, 298, 460, 25, 13, ink, 2)
+		g.label(screen, "单人 60 秒 / 双人 40 秒；双人分别计分，合计过关", 45, 298, 460, 25, 13, ink, 2)
 		g.label(screen, "每关结束自动保存，最多保留 100 个存档", 45, 321, 460, 25, 13, ink, 2)
 	case "help":
 		g.label(screen, "玩法与操作", 60, 21, 430, 38, 25, ink, 2)
-		g.label(screen, "单人：↓ 出钩，↑ 使用炸药，← / → 提前收回。\n双人左侧：S 出钩，W 使用炸药。\n双人右侧：↓ 出钩，↑ 使用炸药，← / → 提前收回。\n双人共享分数、矿物、炸药和商店加成，每关 40 秒。\n抓住黄金、钻石或神秘袋，达到目标金额即可过关。\n过关后点击商品购买道具，再点“下一关”。\n点击“暂停”冻结整关；点击恢复后倒数 3 秒再继续。\n每关结束自动存档；返回首页或关闭窗口也会保存。\n继续存档会恢复当时的关卡、道具和商店状态。", 43, 68, 464, 250, 15, ink, 0)
+		g.label(screen, "单人：↓ 出钩，↑ 使用炸药，← / → 提前收回。\n双人左侧：S 出钩，W 使用炸药。\n双人右侧：↓ 出钩，↑ 使用炸药，← / → 提前收回。\n双人分别计分，合计金额达到目标即可过关。\n双人共享矿物、炸药和商店加成，每关 40 秒。\n过关后点击商品购买道具，两人平摊费用。\n准备好后点“下一关”，继续抓黄金、钻石或神秘袋。\n点击“暂停”冻结整关；点击恢复后倒数 3 秒再继续。\n每关结束自动存档；返回首页或关闭窗口也会保存。\n继续存档会恢复当时的关卡、道具和商店状态。", 43, 68, 464, 250, 15, ink, 0)
 	case "saves", "history":
 		title := fmt.Sprintf("存档 %d / 100", len(g.records))
 		empty := "还没有存档，先开始一局吧"
@@ -140,6 +146,9 @@ func (g *game) drawUI(screen *ebiten.Image) {
 			message = "未达到目标，历史记录尚未保存，请返回首页重试。"
 		}
 		g.label(screen, message, 40, 163, 470, 30, 14, ink, 2)
+		if g.rt.Players() == 2 {
+			g.drawPlayerScores(screen, 193, ink)
+		}
 	}
 	if g.ui == "" && g.paused {
 		fill(screen, rect{0, 0, 550, 400}, color.NRGBA{A: 180})
@@ -170,8 +179,13 @@ func (g *game) drawUI(screen *ebiten.Image) {
 	}
 	if g.ui == "" && g.rt.Root.Frame == 130 {
 		g.label(screen, fmt.Sprintf("金额：$%.0f", numeric(g.rt.Get(g.rt.Root, "score"))), 20, 370, 250, 26, 14, cream, 0)
+		if g.rt.Players() == 2 {
+			g.drawPlayerScores(screen, 341, cream)
+		}
 	}
 	if g.ui == "" && g.inLevel() && g.rt.Players() == 2 {
+		fill(screen, rect{8, 70, 420, 24}, cream)
+		g.drawPlayerScores(screen, 70, ink)
 		g.label(screen, "左：S / W  ·  右：↓ / ↑", 397, 384, 148, 14, 8, cream, 2)
 	}
 }
