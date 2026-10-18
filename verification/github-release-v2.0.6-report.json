@@ -1,0 +1,316 @@
+{
+  "version": "2.0.6",
+  "built_at": "2026-10-18T07:13:36.319959+00:00",
+  "repository": "https://github.com/Yi-Jiao-Chan/gold-miner-go",
+  "source_commit": "084a55f1378d63542cb6b3a31e2d83c8d092d6b9",
+  "source_inputs_sha256": "d765ed3c823c20b9e0e6c5bb04969fb3f5c77fbaee8f2d551ac0173b0b96ce03",
+  "source_inputs_hash_algorithm": "SHA-256 of the UTF-8 manifest containing SHA256(file), two spaces, repository-relative path, newline for each sorted tracked Go source, .syso object, go.mod, go.sum and assets file",
+  "source_inputs_files": 264,
+  "go_version": "1.25.6",
+  "ebitengine": "2.10.5",
+  "changes": {
+    "application_icon": "original-style miner with gold nugget",
+    "windows": "embedded RT_ICON and RT_GROUP_ICON plus window icon",
+    "macos": "CFBundleIconFile with ICNS resource",
+    "linux": "window icon, matching WM_CLASS and optional application-menu installer"
+  },
+  "icon_assets": {
+    "goldminer.icns": "ef81ac76471694688c39d5ea995554ba8ac23701038b626e0a6d1e085ff24de0",
+    "goldminer-source.png": "f75ead79d135e45ec0e48a2a4ec3626c8547eab55d994770a10dceabcc78bbe5",
+    "goldminer.png": "f4bc0e65882d94262b9455513d1f8a546242a05861c270a1819c3fffbbbbe855",
+    "goldminer.ico": "6a925a74d407b1c84791eb75f15da5c1184626280235b1f01479c318c15deec7"
+  },
+  "validation": {
+    "go_test_all": {
+      "command": "xvfb-run -a go test ./...",
+      "result": "passed"
+    },
+    "go_vet_all": {
+      "command": "go vet ./...",
+      "result": "passed"
+    },
+    "icon_formats": {
+      "png": [
+        512,
+        512
+      ],
+      "ico_sizes": [
+        [
+          16,
+          16
+        ],
+        [
+          24,
+          24
+        ],
+        [
+          32,
+          32
+        ],
+        [
+          48,
+          48
+        ],
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          128
+        ],
+        [
+          256,
+          256
+        ]
+      ],
+      "icns_sizes": [
+        [
+          512,
+          512,
+          2
+        ],
+        [
+          512,
+          512,
+          1
+        ],
+        [
+          256,
+          256,
+          2
+        ],
+        [
+          256,
+          256,
+          1
+        ],
+        [
+          128,
+          128,
+          2
+        ],
+        [
+          128,
+          128,
+          1
+        ],
+        [
+          32,
+          32,
+          2
+        ],
+        [
+          16,
+          16,
+          2
+        ]
+      ],
+      "desktop_installer": "GIO parsed and launched with spaces, Unicode, quotes, percent, dollar and backslash in path"
+    },
+    "linux_window_icon": {
+      "window_class": [
+        "goldminer",
+        "GoldMiner"
+      ],
+      "net_wm_icon_size": [
+        512,
+        512
+      ],
+      "rgba_samples_verified": 5,
+      "runtime_icon_matches_source": true
+    },
+    "windows_icon_resources": "all seven RT_ICON payloads and RT_GROUP_ICON metadata match source ICO",
+    "source_tree_clean_at_build": true,
+    "zip_integrity": "CRC, filenames, embedded icon files and executable permissions verified",
+    "screenshots": [
+      "release-2.0.6-coop.png"
+    ]
+  },
+  "platforms": {
+    "macos-arm64": {
+      "binary_sha256": "194b4af03cdf9c2c7a05eaa273b373c6b37248d8ce644b2eb2f8b0b77be23154",
+      "bytes": 28200242,
+      "file": "Mach-O 64-bit arm64 executable, flags:<|DYLDLINK|PIE>",
+      "build": {
+        "-buildmode": "exe",
+        "-compiler": "gc",
+        "-trimpath": "true",
+        "CGO_ENABLED": "0",
+        "GOARCH": "arm64",
+        "GOOS": "darwin",
+        "GOARM64": "v8.0",
+        "vcs": "git",
+        "vcs.revision": "084a55f1378d63542cb6b3a31e2d83c8d092d6b9",
+        "vcs.time": "2026-10-18T07:10:00Z",
+        "vcs.modified": "false"
+      },
+      "native_hardware_run_tested": false,
+      "bundle_version": "2.0.6",
+      "bundle_build": "9",
+      "minimum_macos": "12.0",
+      "embedded_adhoc_signature_pages_verified": 6832,
+      "developer_id_signed": false,
+      "notarized": false,
+      "icon_path": "黄金矿工.app/Contents/Resources/goldminer.icns",
+      "icon_sha256": "ef81ac76471694688c39d5ea995554ba8ac23701038b626e0a6d1e085ff24de0",
+      "icon_sizes": [
+        32,
+        64,
+        128,
+        256,
+        512,
+        1024
+      ],
+      "archive": {
+        "name": "gold-miner-macos-arm64-v2.0.6.zip",
+        "bytes": 17766969,
+        "sha256": "2fb3253656de44af17d5bfea229b541a4860f0510d01872bf578d7879693e61c"
+      }
+    },
+    "windows-amd64": {
+      "binary_sha256": "d1ccdb5b0669181073f70427a1485a1630fec727f19f0654d1125a4ba463a5e6",
+      "bytes": 28954624,
+      "file": "PE32+ executable (GUI) x86-64, for MS Windows, 9 sections",
+      "build": {
+        "-buildmode": "exe",
+        "-compiler": "gc",
+        "-trimpath": "true",
+        "CGO_ENABLED": "0",
+        "GOARCH": "amd64",
+        "GOOS": "windows",
+        "GOAMD64": "v1",
+        "vcs": "git",
+        "vcs.revision": "084a55f1378d63542cb6b3a31e2d83c8d092d6b9",
+        "vcs.time": "2026-10-18T07:10:00Z",
+        "vcs.modified": "false"
+      },
+      "native_hardware_run_tested": false,
+      "pe_machine": "AMD64",
+      "subsystem": "Windows GUI",
+      "icon_resources": {
+        "group": {
+          "resource_type": "RT_GROUP_ICON",
+          "resource_type_id": 14,
+          "resource_id": 1,
+          "language_id": 1033,
+          "entry_count": 7
+        },
+        "icons": [
+          {
+            "resource_id": 2,
+            "language_id": 1033,
+            "width": 16,
+            "height": 16,
+            "size_bytes": 966,
+            "sha256": "3444f60617c97b844601962766c925fbbb8e62004d297e365cf83de6cc64c29b",
+            "matches_source_ico": true
+          },
+          {
+            "resource_id": 3,
+            "language_id": 1033,
+            "width": 24,
+            "height": 24,
+            "size_bytes": 1856,
+            "sha256": "57586707b576ded717ad0607a4d06705237e2ed1a71b60ddbffcd22b55efbdaa",
+            "matches_source_ico": true
+          },
+          {
+            "resource_id": 4,
+            "language_id": 1033,
+            "width": 32,
+            "height": 32,
+            "size_bytes": 3010,
+            "sha256": "86f29e6f7c453d80ba31331345e787fa49610089b42201f84547c54d9cd822b7",
+            "matches_source_ico": true
+          },
+          {
+            "resource_id": 5,
+            "language_id": 1033,
+            "width": 48,
+            "height": 48,
+            "size_bytes": 6062,
+            "sha256": "739208344afee75d89689de8b9c15e206cbc563d21166ce8f6e4b51154ffef4d",
+            "matches_source_ico": true
+          },
+          {
+            "resource_id": 6,
+            "language_id": 1033,
+            "width": 64,
+            "height": 64,
+            "size_bytes": 9883,
+            "sha256": "0322a755a9f3f6bbc67aac7aea962718134ea3d87cacae962a532a755c70c74d",
+            "matches_source_ico": true
+          },
+          {
+            "resource_id": 7,
+            "language_id": 1033,
+            "width": 128,
+            "height": 128,
+            "size_bytes": 31504,
+            "sha256": "2455d4ab31c83a242a9243ac2673d2eaf1cd659e1657182c096f7836d51783a7",
+            "matches_source_ico": true
+          },
+          {
+            "resource_id": 8,
+            "language_id": 1033,
+            "width": 256,
+            "height": 256,
+            "size_bytes": 97882,
+            "sha256": "85c209e6a9f2ff087d16b57f19b1bcb0adc02d0169bacb22ab7023586ed485fc",
+            "matches_source_ico": true
+          }
+        ],
+        "source_ico_sha256": "6a925a74d407b1c84791eb75f15da5c1184626280235b1f01479c318c15deec7",
+        "source_syso_sha256": "2ef962d6115708cfd984001a7151f830137dc572a4a59904b246f2b770f0ac49",
+        "resource_generator": "github.com/akavel/rsrc@v0.10.2",
+        "all_frames_byte_identical_to_source_ico": true
+      },
+      "archive": {
+        "name": "gold-miner-windows-amd64-v2.0.6.zip",
+        "bytes": 16182175,
+        "sha256": "14ea1308a0d3f435a91e698218ad4b39f69acfbdf1b6c439279810af239de0c9"
+      }
+    },
+    "linux-amd64": {
+      "binary_sha256": "8cf666f268f15ba1270159e758a643a6384f64720254b4021d5f40f14ef8c9fe",
+      "bytes": 28238744,
+      "file": "ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=bdd4815bef200113334076738e19a6ef0b4c97da, for GNU/Linux 3.2.0, stripped",
+      "build": {
+        "-buildmode": "exe",
+        "-compiler": "gc",
+        "-trimpath": "true",
+        "CGO_ENABLED": "1",
+        "GOARCH": "amd64",
+        "GOOS": "linux",
+        "GOAMD64": "v1",
+        "vcs": "git",
+        "vcs.revision": "084a55f1378d63542cb6b3a31e2d83c8d092d6b9",
+        "vcs.time": "2026-10-18T07:10:00Z",
+        "vcs.modified": "false"
+      },
+      "native_hardware_run_tested": false,
+      "elf_machine": "AMD64",
+      "minimum_glibc": "2.34",
+      "runtime_icon": {
+        "window_class": [
+          "goldminer",
+          "GoldMiner"
+        ],
+        "net_wm_icon_size": [
+          512,
+          512
+        ],
+        "rgba_samples_verified": 5,
+        "runtime_icon_matches_source": true
+      },
+      "desktop_installer": "GIO parsed and launched with spaces, Unicode, quotes, percent, dollar and backslash in path",
+      "runtime_smoke": "passed in Xvfb",
+      "archive": {
+        "name": "gold-miner-linux-amd64-v2.0.6.zip",
+        "bytes": 16208229,
+        "sha256": "acf619638b89f87efbcfd5df5f00e2ea3f7b9a7c18b5ca13412c360cb0bca2bc"
+      }
+    }
+  }
+}
