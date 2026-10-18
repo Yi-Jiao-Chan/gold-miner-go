@@ -1,0 +1,149 @@
+{
+  "version": "2.0.4",
+  "built_at": "2026-10-18T06:50:31.340970+00:00",
+  "repository": "https://github.com/Yi-Jiao-Chan/gold-miner-go",
+  "source_commit": "a22dc83c168c11f7efe8442d9ee644bc65c66407",
+  "source_inputs_sha256": "b195cabe4356915981165f0e4568e244488fde97465004c4646d688529be50b8",
+  "source_inputs_hash_algorithm": "SHA-256 of the UTF-8 manifest containing SHA256(file), two spaces, repository-relative path, newline for each sorted tracked Go source, go.mod, go.sum and assets file",
+  "source_inputs_files": 258,
+  "go_version": "1.25.6",
+  "ebitengine": "2.10.5",
+  "changes": {
+    "cooperative_score_display": "individual cumulative balances in levels, shop and game-over screen",
+    "level_goal": "shared total remains the sum of player balances",
+    "shop_cost": "each player pays exactly half; half-points and negative individual balances are retained",
+    "legacy_saves": "missing player_scores are initialized to half the current shared score once; later checkpoints retain individual balances"
+  },
+  "validation": {
+    "source_inputs_unchanged_since_feature_tests": true,
+    "go_test_all": {
+      "command": "xvfb-run -a go test ./...",
+      "result": "passed"
+    },
+    "go_race_affected_packages": {
+      "command": "go test -race ./internal/flash ./internal/audiofx",
+      "result": "passed"
+    },
+    "go_vet_all": {
+      "command": "go vet ./...",
+      "result": "passed"
+    },
+    "cooperative_regressions": [
+      "bonus credit on original frame 32 and per-player attribution",
+      "all five shop products split their cost equally",
+      "odd prices preserve half-points and allow negative individual balances",
+      "sold products cannot charge twice",
+      "legacy level and shop checkpoints initialize individual balances once",
+      "unequal balances survive restore and subsequent player-two bonus",
+      "600 plus 400 points pass the shared 650-point goal",
+      "purchase, campaign reload and next level preserve individual balances"
+    ],
+    "release_binary_smoke": {
+      "command": "xvfb-run -a dist/gold-miner-linux-amd64-v2.0.4/goldminer --seed 32 --players <1|2> --layout L1_1 --snapshot <file>",
+      "result": "passed"
+    },
+    "screenshots": [
+      "release-2.0.4-coop-scores.png",
+      "release-2.0.4-solo.png"
+    ],
+    "zip_integrity": "CRC and expected filenames verified for all platform archives",
+    "all_binaries_source_revision_matches": true,
+    "all_binaries_vcs_modified": false
+  },
+  "platforms": {
+    "macos-arm64": {
+      "binary_sha256": "b7c1e1e46c89bb101ce765038062c26556b18e809d12b9ce6b0355ab6d2e2c01",
+      "bytes": 27886466,
+      "file": "Mach-O 64-bit arm64 executable, flags:<|DYLDLINK|PIE>",
+      "build": {
+        "-buildmode": "exe",
+        "-compiler": "gc",
+        "-trimpath": "true",
+        "CGO_ENABLED": "0",
+        "GOARCH": "arm64",
+        "GOOS": "darwin",
+        "GOARM64": "v8.0",
+        "vcs": "git",
+        "vcs.revision": "a22dc83c168c11f7efe8442d9ee644bc65c66407",
+        "vcs.time": "2026-10-18T06:48:10Z",
+        "vcs.modified": "false"
+      },
+      "native_hardware_run_tested": false,
+      "bundle_version": "2.0.4",
+      "bundle_build": "7",
+      "minimum_macos": "12.0",
+      "embedded_adhoc_signature_pages_verified": 6756,
+      "developer_id_signed": false,
+      "notarized": false,
+      "archive": {
+        "name": "gold-miner-macos-arm64-v2.0.4.zip",
+        "bytes": 15544162,
+        "sha256": "ac338eb2a7de061230f258620b8bd49468dddd758cfe36b4b18d036a882cc0e3"
+      }
+    },
+    "windows-amd64": {
+      "binary_sha256": "499dcca56b2456c4a829dece04f8a80403aca8712762a0d2a8f4ad94b0ab9e75",
+      "bytes": 28486144,
+      "file": "PE32+ executable (GUI) x86-64, for MS Windows, 8 sections",
+      "build": {
+        "-buildmode": "exe",
+        "-compiler": "gc",
+        "-trimpath": "true",
+        "CGO_ENABLED": "0",
+        "GOARCH": "amd64",
+        "GOOS": "windows",
+        "GOAMD64": "v1",
+        "vcs": "git",
+        "vcs.revision": "a22dc83c168c11f7efe8442d9ee644bc65c66407",
+        "vcs.time": "2026-10-18T06:48:10Z",
+        "vcs.modified": "false"
+      },
+      "native_hardware_run_tested": false,
+      "pe_machine": "AMD64",
+      "subsystem": "Windows GUI",
+      "archive": {
+        "name": "gold-miner-windows-amd64-v2.0.4.zip",
+        "bytes": 15715372,
+        "sha256": "5e573a2a76463651a10f3cec47e0c0a1abe83d55fd8bb51d8b1c07192d098ebf"
+      }
+    },
+    "linux-amd64": {
+      "binary_sha256": "76448ea163b4d04656e29e63d96f06eb9f5a48b7d40268bd818a615c7dcff058",
+      "bytes": 27923352,
+      "file": "ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=c537067257eeb33fdde8d9f7173b48501d6285b2, for GNU/Linux 3.2.0, stripped",
+      "build": {
+        "-buildmode": "exe",
+        "-compiler": "gc",
+        "-trimpath": "true",
+        "CGO_ENABLED": "1",
+        "GOARCH": "amd64",
+        "GOOS": "linux",
+        "GOAMD64": "v1",
+        "vcs": "git",
+        "vcs.revision": "a22dc83c168c11f7efe8442d9ee644bc65c66407",
+        "vcs.time": "2026-10-18T06:48:10Z",
+        "vcs.modified": "false"
+      },
+      "native_hardware_run_tested": false,
+      "elf_machine": "AMD64",
+      "minimum_glibc": "2.34",
+      "archive": {
+        "name": "gold-miner-linux-amd64-v2.0.4.zip",
+        "bytes": 15578351,
+        "sha256": "2fe93031b5eeb0a2f71db6f43987684f4d9b9d01bac92801373f4564cd9b51c2"
+      },
+      "runtime_smoke": {
+        "passed": true,
+        "display": "Xvfb",
+        "modes": [
+          "solo",
+          "cooperative"
+        ],
+        "snapshot_dimensions": [
+          1100,
+          800
+        ]
+      }
+    }
+  }
+}
