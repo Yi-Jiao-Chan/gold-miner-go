@@ -245,12 +245,21 @@ func main() {
 			g.sounds[id] = audiofx.Prepare(g.sounds[variant.Source], variant)
 		}
 	}
+	iconData, err := fs.ReadFile(assets.Files, "icons/goldminer.png")
+	if err != nil {
+		log.Fatal(err)
+	}
+	windowIcon, err := png.Decode(bytes.NewReader(iconData))
+	if err != nil {
+		log.Fatal(err)
+	}
+	ebiten.SetWindowIcon([]image.Image{windowIcon})
 	ebiten.SetWindowSize(550**scale, 400**scale)
 	ebiten.SetWindowTitle("黄金矿工")
 	ebiten.SetWindowClosingHandled(true)
 	ebiten.SetWindowResizingMode(ebiten.WindowResizingModeEnabled)
 	ebiten.SetTPS(inputTPS)
-	if err = ebiten.RunGame(g); err != nil {
+	if err = ebiten.RunGameWithOptions(g, &ebiten.RunGameOptions{X11ClassName: "GoldMiner", X11InstanceName: "goldminer"}); err != nil {
 		log.Fatal(err)
 	}
 }

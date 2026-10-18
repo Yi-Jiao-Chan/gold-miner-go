@@ -12,11 +12,13 @@
 
 | 平台 | 安装包 | 运行 |
 | --- | --- | --- |
-| macOS Apple 芯片 | `gold-miner-macos-arm64-v2.0.5.zip` | macOS 12+，解压后双击 `黄金矿工.app` |
-| Windows x64 | `gold-miner-windows-amd64-v2.0.5.zip` | 解压后双击 `goldminer.exe` |
-| Linux x64 | `gold-miner-linux-amd64-v2.0.5.zip` | glibc 2.34+，解压后运行 `./goldminer`，需要桌面图形和音频环境 |
+| macOS Apple 芯片 | `gold-miner-macos-arm64-v2.0.6.zip` | macOS 12+，解压后双击 `黄金矿工.app` |
+| Windows x64 | `gold-miner-windows-amd64-v2.0.6.zip` | 解压后双击 `goldminer.exe` |
+| Linux x64 | `gold-miner-linux-amd64-v2.0.6.zip` | glibc 2.34+，解压后运行 `./goldminer`，需要桌面图形和音频环境 |
 
 Mac 应用未经过 Apple Developer ID 签名或公证。被系统阻止时，按安装包内说明允许打开。Linux 版本已实际运行；Windows 与 Mac 版本已编译及校验，尚未做对应系统的实机运行测试。
+
+程序和窗口使用老矿工与金块图标：Windows 图标已嵌入 exe，Mac 图标包含在 `.app` 中。Linux 解压后可运行 `./install-desktop.sh` 添加带图标的应用菜单入口；添加后请保留安装目录。
 
 从源码启动，安装 Go 1.25 或更高版本，然后在本目录运行：
 
@@ -90,7 +92,7 @@ go test -race ./internal/flash ./internal/audiofx
 go vet ./...
 ```
 
-已验证原始开局与累计目标、全部 30 种布局的对象初始化、原按键与鼠标事件、倒计时、商店切换和购买、碰撞后的原时间轴计分。修复了商店商品时间轴重复初始化、闪烁及价格反复变化的问题，五种商品均经过连续鼠标交互和重复购买检查。本次计分显示调整及三平台构建的验证见 `verification/github-release-v2.0.5-report.json`；双人独立计分、购物均摊和旧档续玩的验证见 `verification/github-release-v2.0.4-report.json`；此前中文、暂停、双人、存档的验证见 `verification/github-release-v2.0.3-report.json`，早期原作对照见 `verification/report.json`。已在 Linux 原生窗口用实际键鼠试玩过关、购物、玩家二炸药和退出重启。Apple 芯片版已交叉编译并校验应用包，尚未在 Mac 实机测试。
+已验证原始开局与累计目标、全部 30 种布局的对象初始化、原按键与鼠标事件、倒计时、商店切换和购买、碰撞后的原时间轴计分。修复了商店商品时间轴重复初始化、闪烁及价格反复变化的问题，五种商品均经过连续鼠标交互和重复购买检查。本次程序图标及三平台构建的验证见 `verification/github-release-v2.0.6-report.json`；计分显示调整的验证见 `verification/github-release-v2.0.5-report.json`；双人独立计分、购物均摊和旧档续玩的验证见 `verification/github-release-v2.0.4-report.json`；此前中文、暂停、双人、存档的验证见 `verification/github-release-v2.0.3-report.json`，早期原作对照见 `verification/report.json`。已在 Linux 原生窗口用实际键鼠试玩过关、购物、玩家二炸药和退出重启。Apple 芯片版已交叉编译并校验应用包，尚未在 Mac 实机测试。
 
 截图辅助命令不改变正常游戏菜单：
 
@@ -119,6 +121,9 @@ go run ./cmd/goldminer --seed 1 --frame 10 --snapshot menu.png
 - `reference/gold-miner.swf`：用于审计的原文件；运行不依赖它。
 - `reference/actionscript/`：反编译脚本，保留原文件路径。
 - `tools/extract.py`：从 FFDec 导出结果生成资源数据的脚本。
+- `assets/icons/` 与 `tools/generate_icons.py`：图标原图及 PNG、ICO、ICNS 格式导出；完整生成提示见该目录的 README。
+- `tools/generate_windows_icon.sh`：用固定版本工具重新生成 Windows amd64 图标资源；已提交的 `.syso` 会随 Go 构建自动链接。
+- `packaging/linux/install-desktop.sh`：Linux 安装包中的应用菜单快捷方式安装脚本。
 - `verification/`：Go 和原 SWF 的同布局截图、对照和检查报告。
 
 使用 [JPEXS FFDec 26.3.0](https://github.com/jindrapetrik/jpexs-decompiler) 导出 XML、脚本、PNG、SVG、字体与 WAV 后，运行提取工具；该工具需要 Pillow、CairoSVG 和 fontTools。中文采用随程序嵌入的 Noto Sans SC 字体，按 SIL Open Font License 1.1 分发，许可证位于 `assets/fonts/OFL.txt`。小图形采用 8 倍分辨率导出，大图形和静态文字采用 4 倍（超大预加载纯色图形仍为 2 倍）。动态文字按当前绘制尺寸栅格化，直接绘制到屏幕实际分辨率。字体的 SFNT 容器表经过格式修正，保留提取的字形轮廓和度量。
